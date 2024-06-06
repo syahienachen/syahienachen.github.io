@@ -27,6 +27,8 @@ const App = () => {
 
         <p>{`${window.location.href}`}</p>
 
+        <p>{`${navigator.userAgent} <==> ${navigator.vendor} <==> ${window.opera}`}</p>
+
         {isOpenedAtApp ? 
         <p>This is Opened at Browser</p>
         :
