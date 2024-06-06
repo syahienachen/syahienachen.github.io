@@ -17,8 +17,11 @@ const App = () => {
 
     if (inAppTwo || (document.referrer !== '' && document.referrer !== 'http://localhost:3000/')) {
       // Force open in external browser
-      const currentUrl = window.location.href;
-      window.location.href = currentUrl;
+      navigator.startActivity({
+        url: 'intent://syahienachen.vercel.app/',
+        // Additional options (e.g., package name, intent flags)
+      });
+      
     }
   }, [])
 
