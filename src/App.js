@@ -6,6 +6,7 @@ const App = () => {
 
   const [isOpenedAtApp, setIsOpenedAtApp] = useState(false);
   const [isOpenedAtAppTwo, setIsOpenedAtAppTwo] = useState(false);
+  const [isOpenedAtAppThree, setIsOpenedAtAppThree] = useState(false);
 
   useEffect(() => {
     setIsOpenedAtApp(isApp())
@@ -13,6 +14,7 @@ const App = () => {
   }, [])
 
   const isApp = () => {
+    console.log("window.opener", window.opener)
     return window.self === window.top;
   }
 
@@ -30,10 +32,7 @@ const App = () => {
         </p>
 
         <p>{`${window.navigator.userAgent}`}</p>
-
-        <p>{`${window.location.href}`}</p>
-
-        <p>{`${navigator.userAgent} <==> ${navigator.vendor} <==> ${window.opera}`}</p>
+        <p>{`${document.referrer}`}</p>
 
         {isOpenedAtApp ? 
         <p>This is Opened at Browser</p>
