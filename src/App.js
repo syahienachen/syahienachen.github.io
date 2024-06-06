@@ -5,14 +5,20 @@ import { useEffect, useState } from 'react';
 const App = () => {
 
   const [isOpenedAtApp, setIsOpenedAtApp] = useState(false);
+  const [isOpenedAtAppTwo, setIsOpenedAtAppTwo] = useState(false);
 
   useEffect(() => {
     setIsOpenedAtApp(isApp())
+    setIsOpenedAtAppTwo(isAppTwo())
   }, [])
 
   const isApp = () => {
-    console.log("userAgent", window.navigator.userAgent)
     return window.self === window.top;
+  }
+
+  const isAppTwo = () => {
+
+  return navigator.userAgent.includes("Android")
   }
 
   return (
@@ -33,6 +39,12 @@ const App = () => {
         <p>This is Opened at Browser</p>
         :
         <p>This is Opened at App Email</p>
+        }
+
+        {isOpenedAtAppTwo ? 
+        <p>This is Opened at App Two</p>
+        :
+        <p>This is Opened at Browser Two</p>
         }
 
         <a
