@@ -18,7 +18,7 @@ const App = () => {
 
   const isAppTwo = () => {
 
-  return navigator.userAgent.includes("Android")
+  return navigator.userAgent.includes("Android") && (navigator.userAgent.includes("wv") || navigator.userAgent.includes("WebView"))
   }
 
   return (
