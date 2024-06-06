@@ -11,6 +11,7 @@ const App = () => {
   }, [])
 
   const isApp = () => {
+    console.log("userAgent", window.navigator.userAgent)
     return window.self === window.top;
   }
 
@@ -21,6 +22,8 @@ const App = () => {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <p>{`${window.navigator.userAgent}`}</p>
 
         {isOpenedAtApp ? 
         <p>This is Opened at Browser</p>
