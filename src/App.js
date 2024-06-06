@@ -15,7 +15,7 @@ const App = () => {
 
     console.log(document.referrer)
 
-    if (inAppTwo) {
+    if (inAppTwo || (document.referrer !== '' && document.referrer !== 'http://localhost:3000/')) {
       // Force open in external browser
       const currentUrl = window.location.href;
       window.location.href = currentUrl;
