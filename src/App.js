@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
 
-function App() {
+const App = () => {
+
+  const [isOpenedAtApp, setIsOpenedAtApp] = useState(false);
+
+  useEffect(() => {
+    setIsOpenedAtApp(isApp)
+  }, [])
+
+  const isApp = () => {
+    return window.self === window.top;
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,7 +22,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <p>
-          halo
+          halo {isOpenedAtApp}
         </p>
         <a
           className="App-link"
