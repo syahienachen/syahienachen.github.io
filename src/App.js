@@ -9,12 +9,13 @@ const App = () => {
   const [isOpenedAtAppThree, setIsOpenedAtAppThree] = useState(false);
 
   useEffect(() => {
-    const inApp = isApp();
     const inAppTwo = isAppTwo();
     setIsOpenedAtApp(isApp())
     setIsOpenedAtAppTwo(isAppTwo())
 
-    if (inApp || inAppTwo) {
+    console.log(document.referrer)
+
+    if (inAppTwo) {
       // Force open in external browser
       const currentUrl = window.location.href;
       window.location.href = currentUrl;
