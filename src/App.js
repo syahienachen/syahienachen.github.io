@@ -7,7 +7,7 @@ const App = () => {
   const [isOpenedAtApp, setIsOpenedAtApp] = useState(false);
 
   useEffect(() => {
-    setIsOpenedAtApp(isApp)
+    setIsOpenedAtApp(isApp())
   }, [])
 
   const isApp = () => {
@@ -21,9 +21,13 @@ const App = () => {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>
-          halo {isOpenedAtApp}
-        </p>
+
+        {isOpenedAtApp ? 
+        <p>This is Opened at Browser</p>
+        :
+        <p>This is Opened at App Email</p>
+        }
+
         <a
           className="App-link"
           href="https://reactjs.org"
