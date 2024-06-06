@@ -9,8 +9,16 @@ const App = () => {
   const [isOpenedAtAppThree, setIsOpenedAtAppThree] = useState(false);
 
   useEffect(() => {
+    const inApp = isApp();
+    const inAppTwo = isAppTwo();
     setIsOpenedAtApp(isApp())
     setIsOpenedAtAppTwo(isAppTwo())
+
+    if (inApp || inAppTwo) {
+      // Force open in external browser
+      const currentUrl = window.location.href;
+      window.location.href = currentUrl;
+    }
   }, [])
 
   const isApp = () => {
