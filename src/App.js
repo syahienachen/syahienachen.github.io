@@ -23,7 +23,7 @@ const App = () => {
 
   const bukaDiChrome = (url) => {
     // Membuat intent URL dengan paket aplikasi Chrome
-    const intentURL = `android-app://com.android.chrome/#Intent;scheme=https;package=com.android.chrome;action=android.intent.category.LAUNCHER;`;
+    const intentURL = `intent://stackoverflow.com/#Intent;scheme=https;package=com.android.chrome;action=android.intent.category.LAUNCHER;`;
 
     // Membuat elemen <a> baru dengan href yang disetel ke intent URL
     const link = document.createElement('a');
