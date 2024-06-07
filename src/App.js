@@ -23,7 +23,7 @@ const App = () => {
 
   const bukaDiChrome = (url) => {
     // Membuat intent URL dengan paket aplikasi Chrome
-    const intentURL = `intent://scan/#Intent;scheme=syahienachen;package=com.android.syahienachen.client.android;S.browser_fallback_url=http%3A%2F%2Fsyahienachen.vercel.app;end;`;
+    const intentURL = `intent://scan/#Intent;scheme=https;package=com.android.https.client.android;S.browser_fallback_url=http%3A%2F%2Fsyahienachen.vercel.app;end;`;
   //   <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end">
   //   Take a QR code
   // </a>
