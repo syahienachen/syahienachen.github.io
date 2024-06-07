@@ -21,50 +21,29 @@ const App = () => {
     return navigator.userAgent.includes("Android") && (navigator.userAgent.includes("wv") || navigator.userAgent.includes("WebView"))
   }
 
-  // const bukaDiChrome = (url) => {
-  //   // Membuat intent URL dengan paket aplikasi Chrome
-  //   const intentURL = `intent://${url}#Intent;scheme=https;package=com.android.chrome;end;`;
-
-  //   // Membuat elemen <a> baru dengan href yang disetel ke intent URL
-  //   const link = document.createElement('a');
-  //   link.setAttribute('href', intentURL);
-
-  //   // Menyembunyikan elemen agar tidak terlihat oleh pengguna
-  //   link.style.display = 'none';
-    
-  //   // Menambahkan elemen <a> ke dalam body
-  //   document.body.appendChild(link);
-
-  //   // Simulasikan klik pada tautan
-  //   link.click();
-
-  //   // Menghapus elemen <a> setelah klik
-  //   document.body.removeChild(link);
-  // }
-
-  // const bukaDiChrome = (url) => {
-  //   const intentURL = `https://www.google.com/url?q=${encodeURIComponent(url)}`;
-  //   window.open(intentURL, '_blank');
-  // };
-
-  // const bukaDiChrome = (url) => {
-  //   const intentURL = `https://www.google.com/url?q=${encodeURIComponent(url)}`;
-  //   const link = document.createElement('a');
-  //   link.setAttribute('href', intentURL);
-  //   link.setAttribute('target', '_blank');
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   document.body.removeChild(link);
-  // };
-
   const bukaDiChrome = (url) => {
-    const intentURL = `intent://${url.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end;`;
+    // Membuat intent URL dengan paket aplikasi Chrome
+    const intentURL = `intent://scan/#Intent;scheme=syahienachen;package=com.android.syahienachen.client.android;S.browser_fallback_url=http%3A%2F%2Fsyahienachen.vercel.app;end;`;
+  //   <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end">
+  //   Take a QR code
+  // </a>
+
+    // Membuat elemen <a> baru dengan href yang disetel ke intent URL
     const link = document.createElement('a');
     link.setAttribute('href', intentURL);
+
+    // Menyembunyikan elemen agar tidak terlihat oleh pengguna
+    link.style.display = 'none';
+    
+    // Menambahkan elemen <a> ke dalam body
     document.body.appendChild(link);
+
+    // Simulasikan klik pada tautan
     link.click();
+
+    // Menghapus elemen <a> setelah klik
     document.body.removeChild(link);
-};
+  }
 
   return (
     <div className="App">
