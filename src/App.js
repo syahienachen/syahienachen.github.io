@@ -51,7 +51,7 @@ const App = () => {
         </p>
 
         <p>{`${window.navigator.userAgent}`}</p>
-        <p>{`${document.referrer}`}</p>
+        <p>{`${document}`}</p>
 
         {isOpenedAtAppTwo ?
           <p>This is Opened at App Two</p>
