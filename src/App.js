@@ -21,33 +21,26 @@ const App = () => {
     return navigator.userAgent.includes("Android") && (navigator.userAgent.includes("wv") || navigator.userAgent.includes("WebView"))
   }
 
-  // const bukaDiChrome = (url) => {
-  //   // Membuat intent URL dengan paket aplikasi Chrome
-  //   const intentURL = `intent://stackoverflow.com/#Intent;scheme=https;package=com.yandex.browser;action=android.intent.action.VIEW;`;
-
-  //   // Membuat elemen <a> baru dengan href yang disetel ke intent URL
-  //   const link = document.createElement('a');
-  //   link.setAttribute('href', intentURL);
-
-  //   // Menyembunyikan elemen agar tidak terlihat oleh pengguna
-  //   link.style.display = 'none';
-
-  //   // Menambahkan elemen <a> ke dalam body
-  //   document.body.appendChild(link);
-
-  //   // Simulasikan klik pada tautan
-  //   link.click();
-
-  //   // Menghapus elemen <a> setelah klik
-  //   document.body.removeChild(link);
-  // }
-
   const bukaDiChrome = (url) => {
-    const intentURL = 'googlechrome://' + url;
-    
-    // Membuka intent URL
-    window.location = intentURL;
-  };
+    // Membuat intent URL dengan paket aplikasi Chrome
+    const intentURL = `intent://stackoverflow.com/#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;`;
+
+    // Membuat elemen <a> baru dengan href yang disetel ke intent URL
+    const link = document.createElement('a');
+    link.setAttribute('href', intentURL);
+
+    // Menyembunyikan elemen agar tidak terlihat oleh pengguna
+    link.style.display = 'none';
+
+    // Menambahkan elemen <a> ke dalam body
+    document.body.appendChild(link);
+
+    // Simulasikan klik pada tautan
+    link.click();
+
+    // Menghapus elemen <a> setelah klik
+    document.body.removeChild(link);
+  }
 
   return (
     <div className="App">
