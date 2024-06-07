@@ -43,11 +43,7 @@ const App = () => {
   // }
 
   const bukaDiChrome = (url) => {
-     const intentURL = 'intent://stackoverflow.com/#Intent;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;';
-    
-    // Membuka intent URL
-    window.location = intentURL;
-
+    window.open(url, '_system', 'location=yes');
   };
 
   return (
