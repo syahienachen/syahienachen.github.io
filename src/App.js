@@ -31,7 +31,7 @@ const App = () => {
 
   //   // Menyembunyikan elemen agar tidak terlihat oleh pengguna
   //   link.style.display = 'none';
-    
+
   //   // Menambahkan elemen <a> ke dalam body
   //   document.body.appendChild(link);
 
@@ -44,12 +44,7 @@ const App = () => {
 
   const bukaDiChrome = (url) => {
     const newWindow = window.open(url, '_blank');
-    if (newWindow) {
-      newWindow.focus();
-    } else {
-      // Fallback in case popup is blocked
-      window.location.href = url;
-    }
+    newWindow.focus();
   };
 
   return (
