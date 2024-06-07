@@ -42,9 +42,19 @@ const App = () => {
   //   document.body.removeChild(link);
   // }
 
+  // const bukaDiChrome = (url) => {
+  //   const intentURL = `https://www.google.com/url?q=${encodeURIComponent(url)}`;
+  //   window.open(intentURL, '_blank');
+  // };
+
   const bukaDiChrome = (url) => {
     const intentURL = `https://www.google.com/url?q=${encodeURIComponent(url)}`;
-    window.open(intentURL, '_blank');
+    const link = document.createElement('a');
+    link.setAttribute('href', intentURL);
+    link.setAttribute('target', '_blank');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
