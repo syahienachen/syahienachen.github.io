@@ -4,33 +4,33 @@ import { useEffect, useState } from 'react';
 
 const App = () => {
 
-  const [isOpenedAtApp, setIsOpenedAtApp] = useState(false);
   const [isOpenedAtAppTwo, setIsOpenedAtAppTwo] = useState(false);
-  const [isOpenedAtAppThree, setIsOpenedAtAppThree] = useState(false);
 
   useEffect(() => {
     const inAppTwo = isAppTwo();
-    setIsOpenedAtApp(isApp())
+
     setIsOpenedAtAppTwo(isAppTwo())
 
-    console.log(document.referrer)
-
-    if (inAppTwo || (document.referrer !== '' && document.referrer !== 'http://localhost:3000/')) {
-      const currentUrl = window.location.href;
-      window.open(currentUrl, '_blank');
-      window.close();
-      
+    if (inAppTwo || (document.referrer !== '')) {
+      bukaDiChrome('https://www.example.com');
+      // window.location = "googlechrome://navigate?url=" + encodeURIComponent('https://syahienachen.vercel.app/');
     }
   }, [])
 
-  const isApp = () => {
-    console.log("window.opener", window.opener)
-    return window.self === window.top;
+  const isAppTwo = () => {
+    return navigator.userAgent.includes("Android") && (navigator.userAgent.includes("wv") || navigator.userAgent.includes("WebView"))
   }
 
-  const isAppTwo = () => {
+  const bukaDiChrome = (url) => {
+    // Membuat intent URL dengan paket aplikasi Chrome
+    const intentURL = 'intent://' + url + '#Intent;package=com.android.chrome;end;';
 
-  return navigator.userAgent.includes("Android") && (navigator.userAgent.includes("wv") || navigator.userAgent.includes("WebView"))
+    // Membuat elemen <a> baru dengan href yang disetel ke intent URL
+    var link = document.createElement('a');
+    link.setAttribute('href', intentURL);
+
+    // Simulasikan klik pada tautan
+    link.click();
   }
 
   return (
@@ -44,16 +44,10 @@ const App = () => {
         <p>{`${window.navigator.userAgent}`}</p>
         <p>{`${document.referrer}`}</p>
 
-        {isOpenedAtApp ? 
-        <p>This is Opened at Browser</p>
-        :
-        <p>This is Opened at App Email</p>
-        }
-
-        {isOpenedAtAppTwo ? 
-        <p>This is Opened at App Two</p>
-        :
-        <p>This is Opened at Browser Two</p>
+        {isOpenedAtAppTwo ?
+          <p>This is Opened at App Two</p>
+          :
+          <p>This is Opened at Browser Two</p>
         }
 
         <a
