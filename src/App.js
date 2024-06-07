@@ -12,7 +12,7 @@ const App = () => {
     setIsOpenedAtAppTwo(isAppTwo())
 
     if (inAppTwo || (document.referrer !== '')) {
-      bukaDiChrome('https://syahienachen.vercel.app');
+      bukaDiChrome('syahienachen.vercel.app');
       // window.location = "googlechrome://navigate?url=" + encodeURIComponent('https://syahienachen.vercel.app/');
     }
   }, [])
@@ -21,31 +21,31 @@ const App = () => {
     return navigator.userAgent.includes("Android") && (navigator.userAgent.includes("wv") || navigator.userAgent.includes("WebView"))
   }
 
-  // const bukaDiChrome = (url) => {
-  //   // Membuat intent URL dengan paket aplikasi Chrome
-  //   const intentURL = `intent://stackoverflow.com/#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.android.chrome;end;`;
-
-  //   // Membuat elemen <a> baru dengan href yang disetel ke intent URL
-  //   const link = document.createElement('a');
-  //   link.setAttribute('href', intentURL);
-
-  //   // Menyembunyikan elemen agar tidak terlihat oleh pengguna
-  //   link.style.display = 'none';
-
-  //   // Menambahkan elemen <a> ke dalam body
-  //   document.body.appendChild(link);
-
-  //   // Simulasikan klik pada tautan
-  //   link.click();
-
-  //   // Menghapus elemen <a> setelah klik
-  //   document.body.removeChild(link);
-  // }
-
   const bukaDiChrome = (url) => {
-    const newWindow = window.open(url, '_blank');
-    newWindow.focus();
-  };
+    // Membuat intent URL dengan paket aplikasi Chrome
+    const intentURL = `intent://stackoverflow.com/#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.android.chrome;end;`;
+
+    // Membuat elemen <a> baru dengan href yang disetel ke intent URL
+    const link = document.createElement('a');
+    link.setAttribute('href', intentURL);
+
+    // Menyembunyikan elemen agar tidak terlihat oleh pengguna
+    link.style.display = 'none';
+
+    // Menambahkan elemen <a> ke dalam body
+    document.body.appendChild(link);
+
+    // Simulasikan klik pada tautan
+    link.click();
+
+    // Menghapus elemen <a> setelah klik
+    document.body.removeChild(link);
+  }
+
+  // const bukaDiChrome = (url) => {
+  //   const newWindow = window.open(url, '_blank');
+  //   newWindow.focus();
+  // };
 
   return (
     <div className="App">
