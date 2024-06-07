@@ -12,7 +12,7 @@ const App = () => {
     setIsOpenedAtAppTwo(isAppTwo())
 
     if (inAppTwo || (document.referrer !== '')) {
-      bukaDiChrome('https://syahienachen.vercel.app/');
+      bukaDiChrome('syahienachen.vercel.app');
       // window.location = "googlechrome://navigate?url=" + encodeURIComponent('https://syahienachen.vercel.app/');
     }
   }, [])
@@ -43,7 +43,7 @@ const App = () => {
   // }
 
   const bukaDiChrome = (url) => {
-    const intentURL = 'intent://' + url + '#Intent;package=com.android.chrome;end;';
+    const intentURL = 'googlechrome://' + url;
     
     // Membuka intent URL
     window.location = intentURL;
