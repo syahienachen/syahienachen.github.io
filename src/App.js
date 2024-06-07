@@ -23,14 +23,23 @@ const App = () => {
 
   const bukaDiChrome = (url) => {
     // Membuat intent URL dengan paket aplikasi Chrome
-    const intentURL = 'intent://' + url + '#Intent;package=com.android.chrome;scheme=https;end;';
+    const intentURL = `intent://${url}#Intent;scheme=https;package=com.android.chrome;end;`;
 
     // Membuat elemen <a> baru dengan href yang disetel ke intent URL
-    var link = document.createElement('a');
+    const link = document.createElement('a');
     link.setAttribute('href', intentURL);
+
+    // Menyembunyikan elemen agar tidak terlihat oleh pengguna
+    link.style.display = 'none';
+    
+    // Menambahkan elemen <a> ke dalam body
+    document.body.appendChild(link);
 
     // Simulasikan klik pada tautan
     link.click();
+
+    // Menghapus elemen <a> setelah klik
+    document.body.removeChild(link);
   }
 
   return (
