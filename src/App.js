@@ -12,7 +12,7 @@ const App = () => {
     setIsOpenedAtAppTwo(isAppTwo())
 
     if (inAppTwo || (document.referrer !== '')) {
-      bukaDiChrome('https://www.example.com');
+      bukaDiChrome('https://syahienachen.vercel.app/');
       // window.location = "googlechrome://navigate?url=" + encodeURIComponent('https://syahienachen.vercel.app/');
     }
   }, [])
@@ -24,6 +24,7 @@ const App = () => {
   const bukaDiChrome = (url) => {
     // Membuat intent URL dengan paket aplikasi Chrome
     const intentURL = 'intent://' + url + '#Intent;package=com.android.chrome;end;';
+    // const intentURL = `intent://${url.replace(/^https?:\/\//, '')}#Intent;package=com.android.chrome;scheme=https;end;`;
 
     // Membuat elemen <a> baru dengan href yang disetel ke intent URL
     var link = document.createElement('a');
