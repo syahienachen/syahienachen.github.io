@@ -25,11 +25,12 @@ const App = () => {
 
   const bukaDiChrome = (url) => {
     // Membuat intent URL dengan paket aplikasi Chrome
-    const intentURL = `intent://stackoverflow.com/#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end;`;
+    const intentURL = `intent://stackoverflow.com/#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.android.chrome;end;`;
 
     // Membuat elemen <a> baru dengan href yang disetel ke intent URL
     const link = document.createElement('a');
     link.setAttribute('href', intentURL);
+    link.setAttribute('target', '_blank')
 
     // Menyembunyikan elemen agar tidak terlihat oleh pengguna
     link.style.display = 'none';
