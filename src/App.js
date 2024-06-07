@@ -23,10 +23,7 @@ const App = () => {
 
   const bukaDiChrome = (url) => {
     // Membuat intent URL dengan paket aplikasi Chrome
-    const intentURL = `intent://scan/#Intent;scheme=https;package=com.android.https.client.android;S.browser_fallback_url=http%3A%2F%2Fsyahienachen.vercel.app;end;`;
-  //   <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end">
-  //   Take a QR code
-  // </a>
+    const intentURL = `i<a href="intent://stackoverflow.com/questions/29250152/what-is-the-intent-to-launch-any-website-link-in-google-chrome#Intent;scheme=http;action=android.intent.action.VIEW;end;">`;
 
     // Membuat elemen <a> baru dengan href yang disetel ke intent URL
     const link = document.createElement('a');
