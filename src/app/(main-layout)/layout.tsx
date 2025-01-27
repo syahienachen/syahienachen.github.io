@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import Navbar from "../_components/navbar";
+import Navbar from "../_global-compontents/navbar";
 import { Fragment } from "react";
+import Footer from "../_global-compontents/footer";
 
 export const metadata: Metadata = {
   title: "By Syahienachen",
@@ -15,8 +16,15 @@ export default function MainLayout({
 }>) {
   return (
     <Fragment>
-      <Navbar></Navbar>
-      {children}
+      <header className="sticky top-0 z-20">
+        <Navbar />
+      </header>
+      <div id="main-and-footer" className="py-3 px-4">
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </div>
     </Fragment>
   );
 }
