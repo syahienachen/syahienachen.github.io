@@ -19,7 +19,7 @@ export default function MainLayout({
       <header className="sticky top-0 z-20">
         <Navbar />
       </header>
-      <div id="main-and-footer" className="py-3 px-4">
+      <div id="main-and-footer" className="">
         <main>
           {children}
         </main>
