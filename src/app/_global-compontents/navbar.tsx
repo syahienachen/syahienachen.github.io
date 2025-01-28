@@ -8,7 +8,7 @@ export default function Navbar() {
     return (
         <Fragment>
             {/* MOBILE */}
-            <nav id="navbar" className="flex sm:hidden justify-between items-center px-3 py-[2px] w-fullborder-b bg-white h-14 shadow-lg shadow-slate-100">
+            <nav id="navbar" className="flex sm:hidden justify-between items-center px-3 py-[2px] w-fullborder-b bg-white dark:bg-slate-950 h-14 shadow-lg shadow-slate-100 dark:shadow-slate-800">
                 <div className="flex justify-center items-center gap-2">
                     <div className="h-9 w-9 rounded-full overflow-hidden">
                         <Image src="/photo-profil.png" alt="navbar-img" width={36} height={36} />
