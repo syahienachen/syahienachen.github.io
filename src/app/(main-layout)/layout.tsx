@@ -5,7 +5,7 @@ import { Fragment } from "react";
 import Footer from "../_global-compontents/footer";
 
 export const metadata: Metadata = {
-  title: "By Syahienachen",
+  title: "Syahiena Maulana Syaputra",
   description: "Portofolio by syahienachen",
 };
 

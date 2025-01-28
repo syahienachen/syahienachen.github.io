@@ -2,15 +2,20 @@
 
 import Link from "next/link"
 import { Fragment } from "react"
-// import Image from "next/image"
+import Image from "next/image"
 
 export default function Navbar() {
     return (
         <Fragment>
             {/* MOBILE */}
-            <nav id="navbar" className="flex sm:hidden justify-between items-center px-3 py-[2px] w-fullborder-b">
+            <nav id="navbar" className="flex sm:hidden justify-between items-center px-3 py-[2px] w-fullborder-b bg-white h-14 shadow-lg shadow-slate-100">
+                <div className="flex justify-center items-center gap-2">
+                    <div className="h-9 w-9 rounded-full overflow-hidden">
+                        <Image src="/photo-profil.png" alt="navbar-img" width={36} height={36} />
+                    </div>
+                    <div className="font-medium text-sm">Putra Syahiena</div>
+                </div>
                 <div>icon</div>
-                {/* <Image src="/navbar.png" alt="navbar-img" width={40} height={40} /> */}
             </nav>
 
             {/* TAB */}
