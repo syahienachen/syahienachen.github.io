@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Fragment } from "react"
-import Image from "next/image"
+// import Image from "next/image"
 
 export default function Navbar() {
     return (
@@ -10,7 +10,7 @@ export default function Navbar() {
             {/* MOBILE */}
             <nav id="navbar" className="flex sm:hidden justify-between items-center px-3 py-[2px] w-fullborder-b">
                 <div>icon</div>
-                <Image src="/navbar.png" alt="navbar-img" width={40} height={40} />
+                {/* <Image src="/navbar.png" alt="navbar-img" width={40} height={40} /> */}
             </nav>
 
             {/* TAB */}
