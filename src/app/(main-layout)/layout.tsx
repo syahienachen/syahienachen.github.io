@@ -17,13 +17,13 @@ export default function MainLayout({
   return (
     <Fragment>
       <header className="sticky top-0 z-20">
-        <Navbar />
+        {/* <Navbar /> */}
       </header>
       <div id="main-and-footer" className="">
         <main>
           {children}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Fragment>
   );
