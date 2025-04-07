@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import Navbar from "../_global-compontents/navbar";
 import { Fragment } from "react";
-import Footer from "../_global-compontents/footer";
 
 export const metadata: Metadata = {
   title: "Syahiena Maulana Syaputra",
