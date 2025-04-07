@@ -14,7 +14,7 @@ export default function TestingSection() {
             const fp = await FingerprintJS.load();
             const result = await fp.get();
             console.log(result); // Menampilkan hasil fingerprint di console
-            setDataResult(JSON.stringify(result.components, null, 2)); // Menyimpan hasil fingerprint ke state
+            setDataResult(JSON.stringify(result.components)); // Menyimpan hasil fingerprint ke state
             setFingerprint(result.visitorId);
 
             // Simpan di localStorage (opsional)
